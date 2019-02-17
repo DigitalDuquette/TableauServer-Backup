@@ -13,3 +13,6 @@ tsm maintenance backup --file tabBACKUP -d -u $tabUsername -p $tabPassword
 $dateLimit = (get-date).AddDays(-(7))
 
 Get-ChildItem -Path "C:\ProgramData\Tableau\Tableau Server\data\tabsvc\files\backups\ScriptedBackups" | Where-Object {$_.CreationTime -lt $dateLimit} | Remove-Item #-whatif 
+
+#TODO:
+#[ ] email when failed
